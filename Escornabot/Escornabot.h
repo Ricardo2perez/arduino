@@ -35,6 +35,22 @@ See LICENSE.txt for details
 #include "ButtonSet.h"
 #include "EventManager.h"
 
+
+#if defined(OLED)
+
+    #include "U8glib.h"
+    
+    U8GLIB_SSD1306_128X64 U8G_INSTANCE(U8G_I2C_OPT_NONE|U8G_I2C_OPT_DEV_0);  // I2C / TW
+
+    UG8LIB* OLED = (UG8LIB*) &U8G_INSTANCE;
+
+    
+
+
+#endif
+
+
+
 #if defined(ENGINE_TYPE_STEPPERS)
 
     #include "EngineSteppers.h"
